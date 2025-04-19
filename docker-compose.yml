@@ -1,0 +1,19 @@
+version: '3'
+services:
+  openssh-server:
+    build: .
+    container_name: openssh-server-rsync
+    hostname: openssh-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York        # Set your timezone
+      - PASSWORD_ACCESS=true       # Set to true to enable password authentication
+      - USER_PASSWORD=password     # Change this to your preferred password
+      # - PUBLIC_KEY=your_public_key # Alternatively use public key authentication
+      - SUDO_ACCESS=false          # Set to true to enable sudo access
+    volumes:
+      - ./config:/config
+    ports:
+      - 2222:2222                  # SSH port
+    restart: unless-stopped 
