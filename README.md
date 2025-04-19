@@ -47,7 +47,7 @@ This Docker image extends the [LinuxServer.io openssh-server image](https://gith
      -p 2222:2222 \
      -v ./config:/config \
      --restart unless-stopped \
-     openssh-server-rsync
+     rsync-docker
    ```
 
 ## Default User

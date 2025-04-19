@@ -2,8 +2,8 @@ version: '3'
 services:
   openssh-server:
     build: .
-    container_name: openssh-server-rsync
-    hostname: openssh-server
+    container_name: rsync-docker
+    hostname: rsync-docker
     environment:
       - PUID=1000
       - PGID=1000
